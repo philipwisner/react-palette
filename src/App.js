@@ -1,24 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import album from './album.png';
+import { usePalette } from "react-palette";
 import './App.css';
 
 function App() {
+  const { data, loading, error } = usePalette(album);
+  console.log(data);
+  var colorTiles = Object.keys(data).map(function(key) {
+    return <div className="colorTile" style={{backgroundColor: data[key]}}>{key} {data[key]}</div>;
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+        <img src={album} alt="source"/>
+      </div>
+      <div class="colorTiles">{colorTiles}</div>
     </div>
   );
 }

@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+img {
+  margin: 20px;
+}
+
 .colorTiles {
   display: flex;
   max-width: 800px;
@@ -23,6 +27,7 @@ code {
 
 .colorTile {
   flex: 1 1 auto;
+  padding: 5px;
   margin: 10px;
   height: 100px;
   width: 100px;

@@ -1,10 +1,11 @@
 import React from 'react';
-import album from './album.png';
+import image from './album.png';
 import { usePalette } from "react-palette";
 import './App.css';
 
 function App() {
-  const { data, loading, error } = usePalette(album);
+  //Add image upload and set that as image
+  const { data, loading, error } = usePalette(image);
   console.log(data);
   var colorTiles = Object.keys(data).map(function(key) {
     return <div className="colorTile" style={{backgroundColor: data[key]}}>{key} {data[key]}</div>;
@@ -13,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <img src={album} alt="source"/>
+        <img src={image} alt="source"/>
       </div>
       <div class="colorTiles">{colorTiles}</div>
     </div>
